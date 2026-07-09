@@ -1,0 +1,12 @@
+{
+  "name": "documentation-builder",
+  "version": "1.0.0",
+  "description": "Documentation Builder Gutenberg Block",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.24.0"
+  }
+}

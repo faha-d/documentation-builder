@@ -1,0 +1,57 @@
+.db-documentation {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .db-item {
+    border: 1px solid #ddd;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+  }
+
+  .db-title {
+    width: 100%;
+
+    background: #f7f7f7;
+
+    border: none;
+
+    padding: 18px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .db-content {
+    display: none;
+
+    padding: 20px;
+  }
+
+  .db-item.active .db-content {
+    display: block;
+  }
+
+  .db-icon {
+    font-size: 24px;
+
+    font-weight: bold;
+  }
+
+  .db-item.active .db-icon {
+    transform: rotate(45deg);
+  }
+}

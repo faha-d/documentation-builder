@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "documentation-builder/documentation",
+  "version": "1.0.0",
+  "title": "Documentation Builder v2",
+  "category": "widgets",
+  "icon": "media-document",
+  "description": "Import DOCX documentation.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "intro": {
+      "type": "array",
+      "default": []
+    },
+    "sections": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

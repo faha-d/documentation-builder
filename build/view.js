@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".db-title").forEach(e=>{e.addEventListener("click",()=>{e.parentElement.classList.toggle("active")})})});
