@@ -46,11 +46,7 @@ export default function Edit({ attributes, setAttributes }) {
       });
   };
 
-  /*
-	|--------------------------------------------------------------------------
-	| Upload Screen
-	|--------------------------------------------------------------------------
-	*/
+
 
   if (loading) {
     return (
@@ -86,11 +82,7 @@ export default function Edit({ attributes, setAttributes }) {
     );
   }
 
-  /*
-	|--------------------------------------------------------------------------
-	| Update Helpers
-	|--------------------------------------------------------------------------
-	*/
+
 
   const updateIntro = (index, value) => {
     const copy = [...intro];
@@ -132,36 +124,32 @@ export default function Edit({ attributes, setAttributes }) {
     });
   };
 
-  /*
-	|--------------------------------------------------------------------------
-	| Editor
-	|--------------------------------------------------------------------------
-	*/
-
   return (
     <div {...useBlockProps()}>
       <h2>Documentation Builder</h2>
 
-      <RichText
-        tagName="h1"
-        value={title}
-        placeholder="Title..."
-        onChange={(value) =>
-          setAttributes({
-            title: value,
-          })
-        }
-      />
-
-      <h3>Introduction</h3>
-
-      {intro.map((block, index) => (
-        <TextareaControl
-          key={index}
-          value={block.text}
-          onChange={(value) => updateIntro(index, value)}
+      <PanelBody title={title || "Title & Introduction"} initialOpen={false}>
+        <RichText
+          tagName="h3"
+          value={title}
+          placeholder="Title..."
+          onChange={(value) =>
+            setAttributes({
+              title: value,
+            })
+          }
         />
-      ))}
+
+        <h4>Introduction</h4>
+
+        {intro.map((block, index) => (
+          <TextareaControl
+            key={index}
+            value={block.text}
+            onChange={(value) => updateIntro(index, value)}
+          />
+        ))}
+      </PanelBody>
 
       <hr />
 
