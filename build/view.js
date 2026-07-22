@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".db-title").forEach(e=>{e.addEventListener("click",()=>{e.parentElement.classList.toggle("active")})})});
+document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll(".db-item");e.forEach(t=>{const c=t.querySelector(".db-title");c&&c.addEventListener("click",()=>{const c=t.classList.contains("active");e.forEach(e=>{e.classList.remove("active")}),c||t.classList.add("active")})})});

@@ -1,44 +1,43 @@
 .db-documentation {
-  h1 {
-    margin-bottom: 20px;
-  }
-
   .db-item {
-    border: 1px solid #ddd;
-
-    margin-bottom: 15px;
-
-    border-radius: 8px;
+    margin-bottom: 25px;
 
     overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid #554f37;
   }
 
   .db-title {
     width: 100%;
 
-    background: #f7f7f7;
-
-    border: none;
-
-    padding: 18px;
+    padding: 12px;
 
     cursor: pointer;
-
-    font-size: 18px;
-
-    font-weight: 600;
 
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
+
+    background: #201d26;
+
+    border: none;
+
+    font-size: 16px !important;
+
+    font-weight: 700;
+
   }
 
   .db-content {
     display: none;
 
     padding: 20px;
+
+    padding-top: 0;
   }
 
   .db-item.active .db-content {
@@ -53,5 +52,14 @@
 
   .db-item.active .db-icon {
     transform: rotate(45deg);
+  }
+
+  .db-step-image img {
+    max-width: 350px;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+    width: 100%;
+    object-fit: cover;
   }
 }
