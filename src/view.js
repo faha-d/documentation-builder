@@ -1,7 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".db-title").forEach((button) => {
+  const items = document.querySelectorAll(".db-item");
+
+  items.forEach((item) => {
+    const button = item.querySelector(".db-title");
+
+    if (!button) {
+      return;
+    }
+
     button.addEventListener("click", () => {
-      button.parentElement.classList.toggle("active");
+      const isOpen = item.classList.contains("active");
+
+      items.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+      });
+
+      if (!isOpen) {
+        item.classList.add("active");
+      }
     });
   });
 });
