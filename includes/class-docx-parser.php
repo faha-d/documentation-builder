@@ -18,20 +18,6 @@ class Docx_Parser
         $this->file = $file;
     }
 
-    // public function parse()
-    // {
-
-    //     $this->open();
-    //     $nodes = $this->parse_nodes();
-    //     $this->zip->close();
-
-    //     // return $this->build_document($nodes);
-
-    //     return [
-    //         'nodes' => $nodes,
-    //     ];
-    // }
-
     public function parse()
     {
         $this->open();

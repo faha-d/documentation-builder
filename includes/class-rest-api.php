@@ -37,12 +37,6 @@ function documentation_builder_import_docx(WP_REST_Request $request)
         );
     }
 
-    /*
-|--------------------------------------------------------------------------
-| Extract Google Document ID
-|--------------------------------------------------------------------------
-*/
-
     if (
         ! preg_match(
             '#/document/d/([a-zA-Z0-9_-]+)#',
@@ -59,22 +53,10 @@ function documentation_builder_import_docx(WP_REST_Request $request)
 
     $document_id = $matches[1];
 
-    /*
-|--------------------------------------------------------------------------
-| DOCX Export URL
-|--------------------------------------------------------------------------
-*/
-
     $download_url = sprintf(
         'https://docs.google.com/document/d/%s/export?format=docx',
         $document_id
     );
-
-    /*
-|--------------------------------------------------------------------------
-| Download temporary DOCX
-|--------------------------------------------------------------------------
-*/
 
     require_once ABSPATH . 'wp-admin/includes/file.php';
 
@@ -85,21 +67,9 @@ function documentation_builder_import_docx(WP_REST_Request $request)
         return $temp_file;
     }
 
-    /*
-|--------------------------------------------------------------------------
-| Parse DOCX
-|--------------------------------------------------------------------------
-*/
-
     $parser = new Docx_Parser($temp_file);
 
     $result = $parser->parse();
-
-    /*
-|
-| Delete temporary file
-|--------------------------------------------------------------------------
-*/
 
     @unlink($temp_file);
 
