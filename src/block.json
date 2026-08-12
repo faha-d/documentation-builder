@@ -22,6 +22,11 @@
     "sections": {
       "type": "array",
       "default": []
+    },
+    "layout": {
+      "type": "string",
+      "default": "accordion",
+      "enum": ["accordion", "tabs", "grid", "simple"]
     }
   },
   "editorScript": "file:./index.js",

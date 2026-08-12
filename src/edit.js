@@ -6,6 +6,7 @@ import {
   TextareaControl,
   Spinner,
   TextControl,
+  SelectControl,
 } from "@wordpress/components";
 
 import apiFetch from "@wordpress/api-fetch";
@@ -15,7 +16,7 @@ import { useState } from "@wordpress/element";
 export default function Edit({ attributes, setAttributes }) {
   const [docUrl, setDocUrl] = useState("");
 
-  const { title, intro, sections } = attributes;
+  const { title, intro, sections, layout } = attributes;
 
   const [loading, setLoading] = useState(false);
 
@@ -129,6 +130,22 @@ export default function Edit({ attributes, setAttributes }) {
       <h2>Documentation Builder</h2>
 
       <PanelBody title={title || "Title & Introduction"} initialOpen={false}>
+        <SelectControl
+          label="Layout Type"
+          value={layout}
+          onChange={(value) =>
+            setAttributes({
+              layout: value,
+            })
+          }
+          options={[
+            { label: "Accordion (Collapsible)", value: "accordion" },
+            { label: "Tabs", value: "tabs" },
+            { label: "Grid", value: "grid" },
+            { label: "Simple List", value: "simple" },
+          ]}
+        />
+
         <RichText
           tagName="h3"
           value={title}

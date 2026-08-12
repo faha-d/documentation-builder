@@ -1,65 +1,209 @@
 .db-documentation {
-  .db-item {
-    margin-bottom: 25px;
+  // ===== ACCORDION LAYOUT =====
+  .db-accordion {
+    .db-item {
+      margin-bottom: 25px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid #554f37;
+    }
 
-    overflow: hidden;
+    .db-title {
+      width: 100%;
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #201d26;
+      border: none;
+      font-size: 16px !important;
+      font-weight: 700;
+      color: #fff;
+      transition: background 0.3s ease;
 
-    border-radius: 20px;
+      &:hover {
+        background: #2d2930;
+      }
+    }
 
-    border: 1px solid #554f37;
+    .db-content {
+      display: none;
+      padding: 20px;
+      padding-top: 0;
+    }
+
+    .db-item.active .db-content {
+      display: block;
+    }
+
+    .db-icon {
+      font-size: 24px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .db-item.active .db-icon {
+      transform: rotate(45deg);
+    }
   }
 
-  .db-title {
-    width: 100%;
+  // ===== TABS LAYOUT =====
+  .db-tabs {
+    border-bottom: 2px solid #554f37;
+    margin-bottom: 30px;
 
-    padding: 12px;
+    .db-tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 1px solid #554f37;
+    }
 
-    cursor: pointer;
+    .db-tab-button {
+      padding: 12px 24px;
+      background: #f5f5f5;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
 
-    display: flex;
+      &:hover {
+        background: #e8e8e8;
+      }
 
-    align-items: center;
+      &.active {
+        background: #201d26;
+        color: #fff;
+        border-bottom-color: #8b7355;
+      }
+    }
 
-    justify-content: space-between;
+    .db-tabs-content {
+      padding: 20px 0;
+    }
 
-    background: #201d26;
+    .db-tab-pane {
+      display: none;
 
-    border: none;
+      &.active {
+        display: block;
+      }
 
-    font-size: 16px !important;
-
-    font-weight: 700;
-
+      h3 {
+        margin: 0 0 15px 0;
+      }
+    }
   }
 
-  .db-content {
-    display: none;
+  // ===== GRID LAYOUT =====
+  .db-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
 
-    padding: 20px;
+    .db-grid-section {
+      padding: 20px;
+      border: 1px solid #554f37;
+      border-radius: 12px;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
 
-    padding-top: 0;
+      &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      &.db-intro-section {
+        grid-column: 1 / -1;
+        background: #f0ebe5;
+      }
+
+      h3 {
+        margin: 0 0 15px 0;
+        color: #201d26;
+        font-size: 18px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    .db-grid-content {
+      line-height: 1.6;
+      color: #333;
+    }
   }
 
-  .db-item.active .db-content {
-    display: block;
+  // ===== SIMPLE LIST LAYOUT =====
+  .db-simple {
+    .db-section {
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      h2 {
+        margin: 0 0 15px 0;
+        font-size: 24px;
+        color: #201d26;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #554f37;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin: 15px 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+
+      p {
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 12px;
+      }
+    }
   }
 
-  .db-icon {
-    font-size: 24px;
-
-    font-weight: bold;
-  }
-
-  .db-item.active .db-icon {
-    transform: rotate(45deg);
+  // ===== SHARED STYLES =====
+  .db-step-image {
+    margin: 30px auto;
   }
 
   .db-step-image img {
     max-width: 350px;
     height: auto;
-    margin: 30px auto;
     display: block;
     width: 100%;
     object-fit: cover;
+    border-radius: 8px;
+  }
+
+  ul {
+    margin: 15px 0;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 12px 0;
   }
 }
