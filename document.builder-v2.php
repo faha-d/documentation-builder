@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Documentation Builder
+ * Plugin Name: Documentation Builder v2
  * Description: Import DOCX files into editable documentation.
  * Version: 1.0.0
  * Author: Fahad
